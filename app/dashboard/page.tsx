@@ -15,6 +15,7 @@ const DashboardPage = () => {
                 <li>Role</li>
             </ul>
             <p>This is a paragraph in the Dashboard.</p>
+            <p>The current count is: 0</p>
             <Counter initialCount={0} />
         </div>
     );

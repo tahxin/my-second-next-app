@@ -1,24 +1,21 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 
 interface CounterProps {
     initialCount: number;
-    count: number;
-    setCount: React.Dispatch<React.SetStateAction<number>>;
-
 }
 
-const Counter = (props: CounterProps) => {
-    const [] = React.useState(0);
-    const [count, setCount] = React.useState(0);
+const Counter = ({ initialCount }: CounterProps) => {
+    const [count, setCount] = React.useState(initialCount);
 
     console.log("Hello from the Counter component!");
 
-const handleClick = () => {
+    const handleClick = () => {
         console.log("Button clicked!");
         setCount(count + 1);
     };
+
     return (
         <div>
             <h2 className='text-4xl'>Counter</h2>

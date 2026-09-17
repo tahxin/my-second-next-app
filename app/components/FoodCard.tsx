@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 
-const FoodCard = ({ food }: { food: FoodIssue }) => {
+
+export default function FoodCard({ food }: { food: FoodIssue }) {
     const { dish_name, description, image_link, category, rating } = food;
 
     return (

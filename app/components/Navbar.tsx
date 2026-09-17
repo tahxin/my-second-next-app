@@ -21,12 +21,9 @@ export default function Navbar() {
                 {/* Brand */}
                 <Link
                     href="/"
-                    className="flex items-center gap-2 font-semibold text-foreground transition-opacity hover:opacity-70"
+                    className="text-sm font-semibold text-foreground transition-opacity hover:opacity-70"
                 >
-                    <div className="flex size-6 items-center justify-center rounded-md bg-primary text-primary-foreground text-xs font-bold">
-                        N
-                    </div>
-                    <span className="text-sm">NextApp</span>
+                    NextApp
                 </Link>
 
                 {/* Nav links */}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { LayoutDashboard, UtensilsCrossed, FileText, ArrowRight } from 'lucide-react';
 
 const pages = [
@@ -41,12 +41,12 @@ export default function Home() {
           </p>
         </div>
         <div className="flex items-center gap-3 pt-2">
-          <Button asChild>
-            <Link href="/dashboard">Get started <ArrowRight className="size-4" /></Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/posts">View posts</Link>
-          </Button>
+          <Link href="/dashboard" className={buttonVariants({ variant: 'default' })}>
+            Get started <ArrowRight className="size-4" />
+          </Link>
+          <Link href="/posts" className={buttonVariants({ variant: 'outline' })}>
+            View posts
+          </Link>
         </div>
       </section>
 

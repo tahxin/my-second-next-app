@@ -1,3 +1,5 @@
+import { PostsData } from '../types/types';
+
 const PagePosts = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const Posts: PostsData[] = await res.json();

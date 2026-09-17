@@ -1,36 +1,38 @@
 import React from 'react';
 import Image from 'next/image';
-
-
-import {
-  Nutrition,
-  DhakaPrice,
-  FoodIssue,
-  FoodResponse,
-} from "../types/types";
+import { FoodIssue } from "../types/types";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Star } from 'lucide-react';
 
 const FoodCard = ({ food }: { food: FoodIssue }) => {
-    const { dish_name, description, image_link } = food;
-
-
-
-
-
+    const { dish_name, description, image_link, category, rating } = food;
 
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
-  <div className="card-body">
-    <h2 className="card-title">{food.dish_name}</h2>
-    <p>{food.description}</p>
-  </div>
-  <figure>
-    <Image src={food.image_link} alt={food.dish_name} width={400} height={300} />
-  </figure>
-</div>
+        <Card className="overflow-hidden">
+            <div className="relative aspect-video w-full overflow-hidden">
+                <Image
+                    src={image_link}
+                    alt={dish_name}
+                    fill
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                />
+            </div>
+            <CardHeader>
+                <div className="flex items-start justify-between gap-2">
+                    <CardTitle className="line-clamp-1">{dish_name}</CardTitle>
+                    <div className="flex items-center gap-1 shrink-0 text-xs text-muted-foreground">
+                        <Star className="size-3 fill-current text-yellow-500" />
+                        <span>{rating?.toFixed(1)}</span>
+                    </div>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Badge variant="secondary" className="capitalize">{category}</Badge>
+                </div>
+                <CardDescription className="line-clamp-2">{description}</CardDescription>
+            </CardHeader>
+        </Card>
     );
 };
-
-export default FoodCard;
-
 
 
